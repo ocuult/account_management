@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>鑫远账号管理系统</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/鑫远.ico</normaloff>images/鑫远.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>899</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="jcsj_paypay">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>58</x>
+        <y>1</y>
+        <width>171</width>
+        <height>19</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>1</y>
+        <width>50</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Paypa账号</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>0</y>
+        <width>171</width>
+        <height>19</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>371</x>
+        <y>0</y>
+        <width>44</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>邮箱信息</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>272</x>
+        <y>1</y>
+        <width>91</width>
+        <height>19</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>239</x>
+        <y>1</y>
+        <width>28</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>姓 名</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>50</y>
+        <width>65</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>查 询</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>50</y>
+        <width>65</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删  除</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>530</y>
+        <width>65</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>保  存</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>80</y>
+        <width>898</width>
+        <height>441</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>602</x>
+        <y>0</y>
+        <width>33</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>注册地</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>0</y>
+        <width>61</width>
+        <height>19</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>50</y>
+        <width>65</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>新 增</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="jcj_vps">
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>170</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>第二个层叠页面</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="jcsj_sjk"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>基础数据维护</string>
+    </property>
+    <addaction name="actionPaypal"/>
+    <addaction name="actionVPS"/>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+    <addaction name="action_4"/>
+    <addaction name="actionVAT"/>
+    <addaction name="actionPingP"/>
+    <addaction name="action_8"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>账号信息</string>
+    </property>
+    <addaction name="actionEbay"/>
+    <addaction name="actionAliexpress"/>
+    <addaction name="actionAmazon"/>
+    <addaction name="actionWish"/>
+    <addaction name="actionCD"/>
+    <addaction name="actionWal_Mart"/>
+    <addaction name="action_9"/>
+    <addaction name="action1688"/>
+    <addaction name="actionJOOM"/>
+    <addaction name="actionMMC"/>
+    <addaction name="actionShopee"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>店铺信息</string>
+    </property>
+    <addaction name="actionEbay_2"/>
+    <addaction name="actionAliexpress_2"/>
+    <addaction name="actionAmazon_2"/>
+    <addaction name="actionWish_2"/>
+    <addaction name="actionCD_2"/>
+    <addaction name="actionWal_Mart_2"/>
+    <addaction name="action_10"/>
+    <addaction name="action1688_2"/>
+    <addaction name="actionJOOM_2"/>
+    <addaction name="actionMMC_2"/>
+    <addaction name="actionShopee_2"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>管理工具</string>
+    </property>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
+    <addaction name="action_7"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>关于</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionPaypal">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Paypal信息</string>
+   </property>
+  </action>
+  <action name="actionVPS">
+   <property name="text">
+    <string>VPS信息</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>手机卡信息</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>信用卡信息</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>邮箱信息</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>银行卡信息</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>账号资料自动生成器</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>查询工具</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>风险检查器</string>
+   </property>
+  </action>
+  <action name="actionVAT">
+   <property name="text">
+    <string>VAT信息</string>
+   </property>
+  </action>
+  <action name="actionPingP">
+   <property name="text">
+    <string>PingP信息</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="text">
+    <string>连连信息</string>
+   </property>
+  </action>
+  <action name="actionEbay">
+   <property name="text">
+    <string>Ebay</string>
+   </property>
+  </action>
+  <action name="actionAliexpress">
+   <property name="text">
+    <string>Aliexpress</string>
+   </property>
+  </action>
+  <action name="actionAmazon">
+   <property name="text">
+    <string>Amazon</string>
+   </property>
+  </action>
+  <action name="actionWish">
+   <property name="text">
+    <string>Wish</string>
+   </property>
+  </action>
+  <action name="actionCD">
+   <property name="text">
+    <string>CD</string>
+   </property>
+  </action>
+  <action name="actionWal_Mart">
+   <property name="text">
+    <string>Wal-Mart</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>国际站</string>
+   </property>
+  </action>
+  <action name="action1688">
+   <property name="text">
+    <string>1688</string>
+   </property>
+  </action>
+  <action name="actionJOOM">
+   <property name="text">
+    <string>JOOM</string>
+   </property>
+  </action>
+  <action name="actionMMC">
+   <property name="text">
+    <string>MMC</string>
+   </property>
+  </action>
+  <action name="actionShopee">
+   <property name="text">
+    <string>Shopee</string>
+   </property>
+  </action>
+  <action name="actionEbay_2">
+   <property name="text">
+    <string>Ebay</string>
+   </property>
+  </action>
+  <action name="actionAliexpress_2">
+   <property name="text">
+    <string>Aliexpress</string>
+   </property>
+  </action>
+  <action name="actionAmazon_2">
+   <property name="text">
+    <string>Amazon</string>
+   </property>
+  </action>
+  <action name="actionWish_2">
+   <property name="text">
+    <string>Wish</string>
+   </property>
+  </action>
+  <action name="actionCD_2">
+   <property name="text">
+    <string>CD</string>
+   </property>
+  </action>
+  <action name="actionWal_Mart_2">
+   <property name="text">
+    <string>Wal-Mart</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="text">
+    <string>国际站</string>
+   </property>
+  </action>
+  <action name="action1688_2">
+   <property name="text">
+    <string>1688</string>
+   </property>
+  </action>
+  <action name="actionJOOM_2">
+   <property name="text">
+    <string>JOOM</string>
+   </property>
+  </action>
+  <action name="actionMMC_2">
+   <property name="text">
+    <string>MMC</string>
+   </property>
+  </action>
+  <action name="actionShopee_2">
+   <property name="text">
+    <string>Shopee</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
