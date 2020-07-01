@@ -1,4 +1,5 @@
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery
+from PyQt5.Qt import QMessageBox
 
 
 class MyDb(object):
@@ -8,9 +9,7 @@ class MyDb(object):
 
     def loaddb(self, sql):
         if not self.db.open():
-            print("无法建立数据库连接")
             return False
-        # query = QSqlQuery()
         if self.query.exec_(sql):
             return self.query
             self.db.close()
