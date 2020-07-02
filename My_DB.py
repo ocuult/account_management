@@ -14,7 +14,8 @@ class MyDb(object):
             return self.query
             self.db.close()
         else:
-            exit(1)
+            return 0  #当SQl语句执行失败返回一个标识0，让后后续代码捕获并作出相应的处理。
+
 
     def columnRow(self):
         datacolumn = self.query.record().count()

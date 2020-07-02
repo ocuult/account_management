@@ -15,33 +15,43 @@ class MyUi(QMainWindow, Ui_MainWindow):
         self.my_db1 = MyDb()
         self.paypalheaderlabels = ['ID', 'Paypal账号', 'Papal密码', '邮箱信息', '提现账号', 'VPS信息', '个人信息', '注册时间', '注册地址', '状态']
 
-    @pyqtSlot()#层叠页面的切换
+    # 层叠页面的切换
+    @pyqtSlot()
     def on_actionPaypal_triggered(self):
         self.stackedWidget.setCurrentIndex(0)
 
-    @pyqtSlot() #插入一行
+    # 插入一行
+    @pyqtSlot()
     def on_pushButton_5_clicked(self):
         row = self.tableWidget.rowCount()
         self.tableWidget.insertRow(row)
-
+    #更新数据
     def table_update(self):
         self.tableWidget.blockSignals(True)  # 关闭信号槽，防止itemchange被误触发
         row_select = self.tableWidget.selectedItems()
-        idtext=self.tableWidget.item(row_select[0].row(), 0) #判断ID是否为空，如果ID为空表示当前数据是插入而不是更新
+        idtext = self.tableWidget.item(row_select[0].row(), 0)  # 判断ID是否为空，如果ID为空表示当前数据是插入而不是更新
         if len(row_select) == 0:
             return
-        elif idtext == None:
+        elif idtext == None: # 判断ID是否为空，如果ID为空表示当前数据是插入而不是更新
             sqlstr = '''INSERT INTO "Paypal信息"("{}")VALUES ('{}')'''
             teststr = sqlstr.format(self.paypalheaderlabels[row_select[0].column()], row_select[0].text())
-            self.my_db1.loaddb(teststr)
+            if self.my_db1.loaddb(teststr) == 0:
+                print("当前新增数据失败，清检查是否重复")
+                QMessageBox.warning(self,"警告","当前插入数据失败，清检查是否重复",QMessageBox.Yes)
+                row_select[0].setText('')  # 这里做唯一约束的检查，如果失败了当前输入的数据清空
+
         else:
             sqlstr = '''update "Paypal信息" set "{}" = '{}' where id = {} '''
             teststr = sqlstr.format(self.paypalheaderlabels[row_select[0].column()], row_select[0].text(),
                                     self.tableWidget.item(row_select[0].row(), 0).text())
-            self.my_db1.loaddb(teststr)
+            if self.my_db1.loaddb(teststr) == 0:
+                print("当前插入数据失败，清检查是否重复")
+                QMessageBox.warning(self, "警告", "当前更新数据失败，清检查是否重复", QMessageBox.Yes)
+                row_select[0].setText('')  # 这里做唯一约束的检查，如果失败了当前输入的数据清空
         self.tableWidget.blockSignals(False)  # 打开信号槽，恢复正常的触发
 
-    @pyqtSlot() #删除只做逻辑删除，不实际删除数据
+    # 删除只做逻辑删除，不实际删除数据
+    @pyqtSlot()
     def on_pushButton_2_clicked(self):
         row_select = self.tableWidget.selectedItems()
         if len(row_select) == 0:
@@ -52,9 +62,8 @@ class MyUi(QMainWindow, Ui_MainWindow):
             self.my_db1.loaddb(teststr)
             self.tableWidget.removeRow(row_select[0].row())
 
-
-
-    @pyqtSlot() # 查询按钮
+    # 查询按钮
+    @pyqtSlot()
     def on_pushButton_clicked(self):
         self.tableWidget.blockSignals(True)  # 关闭信号槽，防止itemchange被误触发
         sqlstr = '''SELECT
@@ -71,11 +80,11 @@ class MyUi(QMainWindow, Ui_MainWindow):
                 FROM
                     "Paypal信息" 
                 WHERE
-                    "Paypal账号" LIKE '{}%' 
-                    AND "个人信息" LIKE '{}%' 
-                    AND "邮箱信息" LIKE '{}%' 
-                    AND "注册地址" LIKE '{}%'
-                    and "状态" != '删除' or "状态" ISNULL'''
+                    "Paypal账号" LIKE '{}%' or "Paypal账号" ISNULL
+                    AND "个人信息" LIKE '{}%' or "个人信息" ISNULL
+                    AND "邮箱信息" LIKE '{}%' or "邮箱信息" ISNULL
+                    AND "注册地址" LIKE '{}%' or "注册地址" ISNULL
+                    and "状态" != '删除' or "状态" ISNULL '''
         ppzh = self.lineEdit.text()
         grxx = self.lineEdit_3.text()
         yxxx = self.lineEdit_2.text()
@@ -91,9 +100,9 @@ class MyUi(QMainWindow, Ui_MainWindow):
         j = 0
         while data.next():
             for i in range(10):
-                if i==0:  #当i=0时表示第一列，第一列为ID不能编辑。
+                if i == 0:  # 当i=0时表示第一列，第一列为ID不能编辑。
                     item0 = QTableWidgetItem(str(data.value(i)))
-                    item0.setFlags(QtCore.Qt.ItemIsEnabled)  #第一列不可以被编辑
+                    item0.setFlags(QtCore.Qt.ItemIsEnabled)  # 第一列不可以被编辑
                     self.tableWidget.setItem(j, i, item0)
                 else:
                     self.tableWidget.setItem(j, i, QTableWidgetItem(str(data.value(i))))
